@@ -1,6 +1,5 @@
 pipeline {
-
-    agent any
+    agent {label  "agentfarm" }
     stages {
          stage('Installing Maven'){
 	     steps {
