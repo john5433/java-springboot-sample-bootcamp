@@ -34,6 +34,11 @@ pipeline {
                 sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=john5433_devops-boot-camp -Dsonar.organization=johnalbertodev -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=98b097d36f4420d399b5ab92cccbca1d0f773eca'
                }
             }
-
+	 stage('Deploying artifact') {
+           steps {
+		   
+               sh 'export ANSIBLE_HOST_KEY_CHECKING=False && ansible-playbook --private-key=/home/ubuntu/.ssh/vm-instance-key.pem -i host_inventory deploy-artifact.yml '
+    }
+} 
    }
 }
