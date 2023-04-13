@@ -31,7 +31,7 @@ pipeline {
             }
         stage ('Analyzing Code Quality') {
              steps {
-                sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=john5433_devops-boot-camp -Dsonar.organization=johnalbertodev -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=98b097d36f4420d399b5ab92cccbca1d0f773eca'
+                sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=john5433_devops-boot-camp -Dsonar.organization=john5433 -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=98b097d36f4420d399b5ab92cccbca1d0f773eca'
                }
             }
 	 stage('Deploying artifact') {
