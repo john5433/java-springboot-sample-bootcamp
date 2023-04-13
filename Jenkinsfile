@@ -27,7 +27,8 @@ pipeline {
                 sh 'sudo mv --force sonar-scanner-4.6.2.2472-linux /opt/sonar-scanner'
 		sh 'ls'
                 sh 'sudo sh -c \'echo "#/bin/bash \n export PATH=\\\"$PATH:/opt/sonar-scanner/bin\\\"" > /etc/profile.d/sonar-scanner.sh\''
-                sh 'sonar-scanner --version'
+                sh 'chmod +x sonar-scanner'
+		 sh 'sonar-scanner --version'
                 }
             }
 	stage ('Analyzing Code Quality') {
